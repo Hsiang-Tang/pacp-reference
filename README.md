@@ -1,5 +1,22 @@
 # PACP Reference Implementation
 
+**In plain terms:** this is a small toolkit that keeps AI coding agents (such
+as Claude Code and Codex) working from the same shared rules across several
+machines and projects, without ever storing real project data, file paths, or
+credentials in Git. It answers a concrete problem: when more than one AI agent
+edits your code on more than one machine, how do you make sure they all read
+the same policy, stay inside the right project boundary, and never leak
+machine-specific or private details into a repository you might publish. The
+sections below describe the underlying design in more general terms.
+
+For example, on a machine that runs both Claude Code and Codex against
+several personal projects, this toolkit is what confirms, before either agent
+makes a change, that the local checkout matches the approved rules, that the
+project the agent is about to touch is the one it thinks it is, and that
+nothing sensitive (paths, secrets, personal data) is about to be committed.
+That check runs locally and produces no output beyond a pass/fail result and a
+list of any violations.
+
 PACP Reference Implementation is a sanitized, minimal slice of the
 **Personal Agent Control Plane (PACP)**. It demonstrates how durable agent
 rules, machine-local workspace registration, repository validation, and
