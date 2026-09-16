@@ -55,3 +55,9 @@ new temporary directory and passed the same validator, synthetic workspace,
 publication, test, compilation, diff, clean-worktree, and artifact-name gates.
 The host reported Private visibility and no enabled Pages endpoint. This is
 delivery evidence only; it does not approve public disclosure.
+
+The hosted workflow is currently `UNVERIFIED`. GitHub created the validation
+job but stopped it before any step because of an account billing or Actions
+spending-limit gate. No repository command ran and no code or test failure was
+reported. Resolve that external account state and rerun the workflow before
+using hosted CI as publication evidence.
