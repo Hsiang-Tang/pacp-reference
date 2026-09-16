@@ -1,10 +1,11 @@
 # Current status
 
-- Stage: validated private delivery candidate
+- Stage: delivered private review candidate
 - Repository visibility: Private
 - Public release: prohibited pending human review
-- Current objective: deliver the first clean private commit and verify it from
-  a fresh checkout.
-- Known blocker: none
-- Next gate: staged audit, initial commit, push, clean-checkout validation, and
-  post-push private-visibility confirmation.
+- Current objective: preserve this verified reference slice while the owner
+  completes the human publication review.
+- Known blocker: public disclosure and license review require an explicit human
+  decision for an exact future commit.
+- Next gate: complete `docs/PUBLICATION-CHECKLIST.md`; do not change visibility,
+  enable Pages, or publish a release or package before that approval.

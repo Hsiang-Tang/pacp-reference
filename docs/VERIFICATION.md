@@ -45,3 +45,13 @@ Any source, rule, schema, manifest, workflow, test-selection, remote, or
 visibility change invalidates the corresponding evidence. Documentation-only
 changes still require the validator, publication audit, tests, and diff check
 because documentation is part of the disclosure surface.
+
+## Private candidate evidence
+
+On 2026-09-16, the initial private candidate passed the complete command set,
+18 unit tests, the built-in publication audit, an additional local deny-term
+scan, and a 31-file tracked-object audit. The pushed commit was cloned into a
+new temporary directory and passed the same validator, synthetic workspace,
+publication, test, compilation, diff, clean-worktree, and artifact-name gates.
+The host reported Private visibility and no enabled Pages endpoint. This is
+delivery evidence only; it does not approve public disclosure.

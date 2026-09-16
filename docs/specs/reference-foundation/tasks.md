@@ -10,5 +10,5 @@
   source differences, verification, and the human publication checklist.
 - [x] **REF-TASK-005** Run the full local validation and repair failures.
 - [x] **REF-TASK-006** Audit candidate and tracked files for disclosure hazards.
-- [ ] **REF-TASK-007** Commit, push, validate from a clean checkout, and confirm
+- [x] **REF-TASK-007** Commit, push, validate from a clean checkout, and confirm
   Private visibility with Pages disabled.
