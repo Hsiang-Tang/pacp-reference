@@ -1,0 +1,19 @@
+version = 1
+product_name = "PACP Reference Implementation"
+expanded_name = "Personal Agent Control Plane"
+
+[state]
+truth_model = "federated"
+project_truth_owner = "source-repository"
+machine_inventory_owner = "machine-local-manifest"
+portable_governance_owner = "pacp-reference"
+chat_is_canonical = false
+
+[automation]
+unattended_mode = "observe-and-propose"
+
+[status]
+disclose_project_identifiers = false
+disclose_local_paths = false
+disclose_remote_urls = false
+disclose_sensitive_values = false

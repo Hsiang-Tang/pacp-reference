@@ -1,0 +1,57 @@
+version = 1
+product_name = "PACP Reference Implementation"
+
+[session]
+read_order = [
+  "AGENTS.md",
+  "README.md",
+  "docs/ARCHITECTURE.md",
+  "rules/security.md",
+  "rules/workspace.md",
+  "docs/specs/reference-foundation/spec.md",
+  "docs/specs/reference-foundation/plan.md",
+  "docs/specs/reference-foundation/tasks.md",
+  "docs/VERIFICATION.md",
+  "docs/STATUS.md",
+]
+
+[registration]
+root_environment = "PACP_REFERENCE_ROOT"
+root_git_config = "pacp.referenceRoot"
+workspace_manifest_environment = "PACP_REFERENCE_WORKSPACE_MANIFEST"
+workspace_manifest_git_config = "pacp.referenceWorkspaceManifest"
+
+[validation]
+required_files = [
+  ".github/workflows/validate.yml",
+  ".gitignore",
+  "AGENTS.md",
+  "CLAUDE.md",
+  "README.md",
+  "SECURITY.md",
+  "control-plane.toml",
+  "pacp.toml",
+  "docs/ARCHITECTURE.md",
+  "docs/DIFFERENCES.md",
+  "docs/PUBLICATION-CHECKLIST.md",
+  "docs/STATUS.md",
+  "docs/VERIFICATION.md",
+  "docs/adr/0001-federated-state-and-trust-boundaries.md",
+  "docs/specs/reference-foundation/spec.md",
+  "docs/specs/reference-foundation/plan.md",
+  "docs/specs/reference-foundation/tasks.md",
+  "examples/workspace.toml",
+  "examples/synthetic-workspace/00_Inbox/.gitkeep",
+  "examples/synthetic-workspace/projects/sample-notes/README.md",
+  "rules/security.md",
+  "rules/workspace.md",
+  "tests/test_audit_publication.py",
+  "tests/test_check_control_plane.py",
+  "tests/test_register_machine.py",
+  "tests/test_workspace_doctor.py",
+  "tools/_toml.py",
+  "tools/audit_publication.py",
+  "tools/check_control_plane.py",
+  "tools/register_machine.py",
+  "tools/workspace_doctor.py",
+]
