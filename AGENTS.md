@@ -43,13 +43,11 @@ before changing behavior.
 - Run the complete verification contract before delivery:
 
   ```sh
-  python3 tools/check_control_plane.py
-  python3 tools/workspace_doctor.py --manifest examples/workspace.toml
-  python3 tools/audit_publication.py
-  python3 -m unittest discover -s tests -v
-  python3 -m compileall -q tools tests
-  git diff --check
+  python3 tools/validate.py
   ```
+
+- Hosted CI is intentionally absent. Run validation locally and repeat it from
+  a clean checkout of the exact delivery commit.
 
 - Inspect staged paths and the staged diff before every commit. Push only to
   the already verified private owner remote.

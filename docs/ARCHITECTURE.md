@@ -68,6 +68,13 @@ machine-user paths, non-placeholder email addresses, and artifact types that
 should not enter source history. Additional source-specific terms can be passed
 with repeated `--deny` options without storing those terms in the repository.
 
+### Local validation pipeline
+
+`tools/validate.py` composes the deterministic validators, publication scan,
+tests, Python compilation, and staged/unstaged diff checks. Hosted CI is not a
+runtime dependency; the exact delivery commit is validated again from a clean
+local checkout.
+
 ## Trust boundaries
 
 1. Repository policy is portable and reviewable.

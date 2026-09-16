@@ -52,12 +52,15 @@ requirements, decisions, status, and detailed evidence.
 Clone the repository, then run the complete local checks:
 
 ```sh
-python3 tools/check_control_plane.py
-python3 tools/workspace_doctor.py --manifest examples/workspace.toml
-python3 tools/audit_publication.py
-python3 -m unittest discover -s tests -v
-python3 -m compileall -q tools tests
-git diff --check
+python3 tools/validate.py
+```
+
+The local pipeline runs the control-plane validator, synthetic workspace
+doctor, publication audit, unit tests, Python compilation, and staged/unstaged
+diff checks. Add private review terms without storing them in Git:
+
+```sh
+python3 tools/validate.py --deny internal-codename
 ```
 
 Inspect the current reference pointers without changing machine state:
@@ -116,9 +119,9 @@ real checked-in configuration, malformed and missing configuration, pointer
 precedence and removal, synthetic workspace success, unregistered Git roots,
 remote allowlists, sensitive-looking text, and forbidden artifact names.
 
-CI is defined in [`.github/workflows/validate.yml`](.github/workflows/validate.yml)
-and runs only deterministic repository checks. Passing CI does not authorize
-publication.
+Hosted CI is intentionally absent because validation runs locally. A delivery
+candidate must pass the local pipeline again from a clean checkout of its exact
+commit. Passing validation does not authorize publication.
 
 ## Publication status
 

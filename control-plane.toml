@@ -23,7 +23,6 @@ workspace_manifest_git_config = "pacp.referenceWorkspaceManifest"
 
 [validation]
 required_files = [
-  ".github/workflows/validate.yml",
   ".gitignore",
   "AGENTS.md",
   "CLAUDE.md",
@@ -53,5 +52,6 @@ required_files = [
   "tools/audit_publication.py",
   "tools/check_control_plane.py",
   "tools/register_machine.py",
+  "tools/validate.py",
   "tools/workspace_doctor.py",
 ]

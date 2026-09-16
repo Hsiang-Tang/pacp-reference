@@ -5,17 +5,16 @@
 Run from the repository root:
 
 ```sh
-python3 tools/check_control_plane.py
-python3 tools/workspace_doctor.py --manifest examples/workspace.toml
-python3 tools/audit_publication.py
-python3 -m unittest discover -s tests -v
-python3 -m compileall -q tools tests
-git diff --check
+python3 tools/validate.py
 ```
 
 Before publication review, also run the audit with a local, untracked denylist
 translated into repeated `--deny` arguments and use an independently installed
-secret scanner when available.
+secret scanner when available:
+
+```sh
+python3 tools/validate.py --deny internal-codename
+```
 
 ## Requirement traceability
 
@@ -56,8 +55,7 @@ publication, test, compilation, diff, clean-worktree, and artifact-name gates.
 The host reported Private visibility and no enabled Pages endpoint. This is
 delivery evidence only; it does not approve public disclosure.
 
-The hosted workflow is currently `UNVERIFIED`. GitHub created the validation
-job but stopped it before any step because of an account billing or Actions
-spending-limit gate. No repository command ran and no code or test failure was
-reported. Resolve that external account state and rerun the workflow before
-using hosted CI as publication evidence.
+An early hosted-workflow attempt was stopped by GitHub before any step because
+of an account quota/billing gate; it reported no code or test failure. Hosted
+CI was then removed by owner direction. `tools/validate.py` and a clean local
+checkout now own the complete validation contract.

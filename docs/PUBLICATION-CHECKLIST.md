@@ -18,7 +18,8 @@ This checklist is a human gate. Automated checks cannot approve publication.
 - [ ] Select and review an open-source license; no license is granted today.
 - [ ] Review repository description, topics, issue templates, Actions,
   collaborators, branch controls, and security settings.
-- [ ] Decide whether Issues and Actions should remain enabled for a public repo.
+- [ ] Confirm hosted Actions workflows remain absent unless a separately
+  reviewed publication plan deliberately adds them.
 - [ ] Confirm GitHub Pages remains disabled.
 - [ ] Confirm there are no releases, packages, deployments, or public forks.
 - [ ] Obtain explicit human approval for the exact commit SHA before changing

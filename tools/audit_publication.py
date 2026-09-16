@@ -30,7 +30,8 @@ def tracked_files(root: Path) -> list[Path]:
         capture_output=True,
         text=True,
     )
-    return [root / item for item in result.stdout.splitlines() if item]
+    candidates = [root / item for item in result.stdout.splitlines() if item]
+    return [path for path in candidates if path.is_file()]
 
 
 def patterns(extra_terms: list[str]) -> list[tuple[str, re.Pattern[str]]]:
