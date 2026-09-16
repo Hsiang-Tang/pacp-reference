@@ -1,13 +1,14 @@
 # Current status
 
-- Stage: delivered private review candidate
-- Repository visibility: Private
-- Public release: prohibited pending human review
-- Current objective: preserve this verified reference slice while the owner
-  completes the human publication review.
-- Known blocker: public disclosure and license review require an explicit human
-  decision for an exact future commit.
+- Stage: public reference implementation
+- Repository visibility: Public
+- License: MIT
+- Current objective: preserve a small, runnable, sanitized portfolio slice.
+- Hosted surface: GitHub Pages, releases, packages, deployments, and Actions
+  workflows are intentionally unused.
 - Validation owner: local pipeline plus a fresh checkout of the exact delivery
   commit; hosted CI is intentionally absent.
-- Next gate: complete `docs/PUBLICATION-CHECKLIST.md`; do not change visibility,
-  enable Pages, or publish a release or package before that approval.
+- Known limitation: the built-in publication audit is pattern-based defense in
+  depth and cannot establish ownership or disclosure rights.
+- Next gate: rerun the complete validation and publication checklist for every
+  material public change.

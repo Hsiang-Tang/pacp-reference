@@ -27,8 +27,8 @@ smallest coherent PACP governance and workspace-validation slice.
 - **REF-007 — Reproducible evidence:** The exact candidate passes validators,
   unit tests, Python compilation, tracked-files review, privacy scanning, and a
   clean-checkout execution before delivery.
-- **REF-008 — Private candidate:** The hosted repository remains Private, Pages
-  stays disabled, and no public release or package is created.
+- **REF-008 — Public reference:** The sanitized repository is public under the
+  MIT License; Pages stays disabled and no release or package is created.
 
 ## Negative and boundary cases
 
@@ -46,4 +46,4 @@ smallest coherent PACP governance and workspace-validation slice.
 
 This feature does not reproduce the complete private PACP product, migrate a
 real workspace, install an automation, aggregate project data, host a service,
-manage secrets, publish a package, enable Pages, or make the repository public.
+manage secrets, publish a package, or enable Pages.

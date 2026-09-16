@@ -7,8 +7,8 @@
   contents across ownership boundaries.
 - Public examples and tests use synthetic identifiers and reserved example
   domains only.
-- Private repository visibility is access control, not permission to publish or
-  proof that content is sanitized.
+- Public repository visibility makes every committed object a disclosure
+  surface; a clean working tree does not prove that history is sanitized.
 - When disclosure safety is uncertain, leave the material with its source owner
   and require human review.
 

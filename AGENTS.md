@@ -4,12 +4,12 @@
 
 - This repository is the sanitized, minimal reference implementation of
   Personal Agent Control Plane (PACP) concepts.
-- Keep it self-contained, synthetic, standard-library-only, and suitable for a
-  future public review.
+- Keep it self-contained, synthetic, standard-library-only, and safe for its
+  current public visibility.
 - Do not copy a source repository wholesale. Add only allowlisted capabilities
   that are required by the active specification.
-- The repository must remain private until a human completes
-  `docs/PUBLICATION-CHECKLIST.md` and explicitly authorizes publication.
+- Treat every tracked file and every commit as immediately public. Complete
+  `docs/PUBLICATION-CHECKLIST.md` for any material delivery.
 
 ## Startup order
 
@@ -29,8 +29,8 @@ before changing behavior.
   grants permission to copy their data.
 - Unknown disclosure safety fails closed: omit the material and request human
   review.
-- Do not enable Pages, publish releases or packages, or change repository
-  visibility as part of ordinary development.
+- Do not enable Pages, publish releases or packages, add collaborators, or
+  change repository visibility as part of ordinary development.
 
 ## Development and verification
 
@@ -50,4 +50,6 @@ before changing behavior.
   a clean checkout of the exact delivery commit.
 
 - Inspect staged paths and the staged diff before every commit. Push only to
-  the already verified private owner remote.
+  the verified owner remote.
+- Commits use only the repository owner's name and GitHub noreply identity.
+  Do not add `Co-authored-by` trailers or additional commit authors.

@@ -26,6 +26,7 @@ required_files = [
   ".gitignore",
   "AGENTS.md",
   "CLAUDE.md",
+  "LICENSE",
   "README.md",
   "SECURITY.md",
   "control-plane.toml",

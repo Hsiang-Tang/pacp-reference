@@ -1,31 +1,32 @@
-# Public publication checklist
+# Public maintenance checklist
 
-This checklist is a human gate. Automated checks cannot approve publication.
+The initial publication gate was completed by the owner on 2026-09-16. Keep
+this checklist as a repeatable gate for material changes; automated checks
+cannot approve ownership or disclosure.
 
-- [ ] Confirm every tracked file is owned by the repository owner or is
+- [x] Confirm every tracked file is owned by the repository owner or is
   otherwise licensed for publication.
-- [ ] Review the complete diff and every Git object, not only the working tree.
-- [ ] Confirm no secrets, credentials, cookies, keys, `.env` data, or auth
+- [x] Review the complete diff and every Git object, not only the working tree.
+- [x] Confirm no secrets, credentials, cookies, keys, `.env` data, or auth
   metadata are present.
-- [ ] Confirm no real workspace inventory, machine path, user account, email,
+- [x] Confirm no real workspace inventory, machine path, user account, email,
   private remote, project codename, organization name, customer data, or
   personal record is present.
-- [ ] Confirm all examples, paths, identities, URLs, and datasets are synthetic.
-- [ ] Confirm excluded source capabilities are not implied or claimed.
-- [ ] Run every command in `docs/VERIFICATION.md` from a clean checkout of the
+- [x] Confirm all examples, paths, identities, URLs, and datasets are synthetic.
+- [x] Confirm excluded source capabilities are not implied or claimed.
+- [x] Run every command in `docs/VERIFICATION.md` from a clean checkout of the
   exact candidate commit.
-- [ ] Run an independent secret scanner and review all results.
-- [ ] Select and review an open-source license; no license is granted today.
-- [ ] Review repository description, topics, issue templates, Actions,
+- [x] Run an independent hosted secret scan and review all results.
+- [x] Select and review the MIT open-source license.
+- [x] Review repository description, topics, issue templates, Actions,
   collaborators, branch controls, and security settings.
-- [ ] Confirm hosted Actions workflows remain absent unless a separately
+- [x] Confirm hosted Actions workflows remain absent unless a separately
   reviewed publication plan deliberately adds them.
-- [ ] Confirm GitHub Pages remains disabled.
-- [ ] Confirm there are no releases, packages, deployments, or public forks.
-- [ ] Obtain explicit human approval for the exact commit SHA before changing
-  visibility.
-- [ ] After any approved visibility change, recheck rendered files, repository
+- [x] Confirm GitHub Pages remains disabled.
+- [x] Confirm there are no releases, packages, deployments, or public forks.
+- [x] Obtain explicit owner approval for public visibility.
+- [x] After the visibility change, recheck rendered files, repository
   metadata, Pages, releases, packages, collaborators, and the default branch.
 
-Until every applicable item is complete and the owner explicitly approves the
-exact candidate, the repository must remain Private.
+For future material changes, repeat every applicable check before push and
+again against the exact public commit.

@@ -10,12 +10,13 @@ data, and retains standard-library execution.
 
 ## Risk and authority
 
-- Risk: privacy-sensitive private repository delivery.
-- Authorized: create the new repository, adapt allowlisted files, validate,
-  commit, and push to the verified private owner remote.
-- Human gate: any public visibility, license choice, release, package, or Pages
-  activation.
-- Failure posture: exclude uncertain content and keep the repository Private.
+- Risk: privacy-sensitive public repository delivery.
+- Authorized: maintain the allowlisted reference slice, validate it, and push
+  to the verified owner remote.
+- Accepted publication decision: public visibility with the MIT License.
+- Human gate: any broader disclosure, release, package, Pages activation, or
+  license change.
+- Failure posture: exclude uncertain content from public history.
 
 ## Design
 
@@ -32,11 +33,12 @@ data, and retains standard-library execution.
 
 Use known-good and known-bad unit fixtures, run all repository validators, scan
 the candidate and staged/tracked file set, then clone the pushed commit into a
-disposable directory and repeat the main gate. Confirm hosted visibility and
-Pages state before and after push.
+disposable directory and repeat the main gate. Confirm public visibility and
+the intended hosted-surface settings after push.
 
 ## Rollback
 
-Before first push, remove the unneeded empty remote only through an explicit
-owner decision. After push, revert with a new commit or archive the still-private
-repository. Never rewrite or publish unsafe history as a cleanup shortcut.
+After ordinary delivery, revert a faulty change with a new commit. If sensitive
+material ever enters public history, remove it through an explicitly reviewed
+incident procedure and rotate any affected credential. A history rewrite is
+not a substitute for treating exposed data as compromised.

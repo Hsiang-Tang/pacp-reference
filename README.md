@@ -9,23 +9,21 @@ the same policy, stay inside the right project boundary, and never leak
 machine-specific or private details into a repository you might publish. The
 sections below describe the underlying design in more general terms.
 
-For example, on a machine that runs both Claude Code and Codex against
-several personal projects, this toolkit is what confirms, before either agent
-makes a change, that the local checkout matches the approved rules, that the
-project the agent is about to touch is the one it thinks it is, and that
-nothing sensitive (paths, secrets, personal data) is about to be committed.
-That check runs locally and produces no output beyond a pass/fail result and a
-list of any violations.
+For example, on a machine that runs both Claude Code and Codex against several
+projects, this toolkit can be invoked before work or delivery to confirm that
+the local checkout matches the approved rules, that the selected project has
+the expected identity, and that common disclosure hazards are absent. The
+checks run locally and report any violations; they do not upload project
+contents or replace human review.
 
 PACP Reference Implementation is a sanitized, minimal slice of the
 **Personal Agent Control Plane (PACP)**. It demonstrates how durable agent
 rules, machine-local workspace registration, repository validation, and
 privacy-aware delivery can work together without centralizing project data.
 
-This repository is a private public-display candidate. It is not yet approved
-for public visibility, has no open-source license, and must remain private until
-the human review in [`docs/PUBLICATION-CHECKLIST.md`](docs/PUBLICATION-CHECKLIST.md)
-is complete.
+This repository is the public, sanitized reference implementation. It is
+released under the [MIT License](LICENSE). The private source product, real
+workspace inventory, and machine-local state are not included.
 
 ## What this reference includes
 
@@ -125,9 +123,9 @@ repository, identity, remote-scope, and large-worktree failure behavior.
   what was deliberately omitted from the source project.
 - [`docs/VERIFICATION.md`](docs/VERIFICATION.md) owns executable acceptance.
 
-Private hosting is not a substitute for sanitization. Unknown material is
+Public hosting does not relax the sanitization boundary. Unknown material is
 excluded, automated scans are defense in depth, and a human must still confirm
-ownership and disclosure rights before publication.
+ownership and disclosure rights before each delivery.
 
 ## Testing
 
@@ -138,11 +136,13 @@ remote allowlists, sensitive-looking text, and forbidden artifact names.
 
 Hosted CI is intentionally absent because validation runs locally. A delivery
 candidate must pass the local pipeline again from a clean checkout of its exact
-commit. Passing validation does not authorize publication.
+commit. Passing validation does not by itself establish ownership or disclosure
+rights.
 
 ## Publication status
 
-Current status is tracked in [`docs/STATUS.md`](docs/STATUS.md). Before any
-visibility change, release, package, or Pages configuration, complete
-[`docs/PUBLICATION-CHECKLIST.md`](docs/PUBLICATION-CHECKLIST.md) and obtain an
-explicit human decision. Until then, this repository stays Private.
+The repository is public and MIT-licensed. GitHub Pages, releases, packages,
+and deployments are intentionally unused. Current status is tracked in
+[`docs/STATUS.md`](docs/STATUS.md), and
+[`docs/PUBLICATION-CHECKLIST.md`](docs/PUBLICATION-CHECKLIST.md) remains the
+maintenance checklist for future public changes.

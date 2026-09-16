@@ -8,7 +8,7 @@ Run from the repository root:
 python3 tools/validate.py
 ```
 
-Before publication review, also run the audit with a local, untracked denylist
+Before public delivery, also run the audit with a local, untracked denylist
 translated into repeated `--deny` arguments and use an independently installed
 secret scanner when available:
 
@@ -35,8 +35,9 @@ python3 tools/validate.py --deny internal-codename
   repository.
 - A clean publication audit is defense in depth, not a publication decision.
 - The fresh-checkout run must use the exact pushed commit.
-- Private visibility and disabled Pages must be checked both before first push
-  and after delivery.
+- Public visibility, license, disabled Pages, releases, deployments,
+  collaborators, and repository security settings must be checked after
+  delivery.
 
 ## Evidence invalidation
 
@@ -45,7 +46,7 @@ visibility change invalidates the corresponding evidence. Documentation-only
 changes still require the validator, publication audit, tests, and diff check
 because documentation is part of the disclosure surface.
 
-## Private candidate evidence
+## Initial private-candidate evidence
 
 On 2026-09-16, the initial private candidate passed the complete command set,
 18 unit tests, the built-in publication audit, an additional local deny-term
@@ -59,3 +60,13 @@ An early hosted-workflow attempt was stopped by GitHub before any step because
 of an account quota/billing gate; it reported no code or test failure. Hosted
 CI was then removed by owner direction. `tools/validate.py` and a clean local
 checkout now own the complete validation contract.
+
+## Public release evidence
+
+On 2026-09-16, the owner selected the MIT License and authorized public
+visibility. The public repository was re-audited after that transition: the
+local validation pipeline passed 19 tests, the publication audit passed, Pages
+was disabled, and there were no releases, deployments, forks, additional
+collaborators, pending invitations, or Actions workflows. The commit history
+uses only the owner's GitHub identity. Future changes invalidate the relevant
+evidence and must repeat this contract.
